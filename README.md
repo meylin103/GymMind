@@ -1,81 +1,254 @@
-# WebApp boilerplate with React JS and Flask API
+# 🏋️ GymMind AI
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+![GymMind Home](docs/assets/images/home.jpg)
 
-- Documentation can be found here: https://4geeks.com/docs/start/react-flask-template
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to Render [in just a few steps here](https://4geeks.com/docs/start/deploy-to-render-com).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Backend-black?logo=flask)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql)
+![JWT](https://img.shields.io/badge/JWT-Authentication-orange)
+![Render](https://img.shields.io/badge/Deploy-Render-46E3B7)
 
-### 1) Installation:
+---
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+# 📖 Overview
 
-It is recomended to install the backend first, make sure you have Python 3.10, Pipenv and a database engine (Posgress recomended)
+GymMind AI is a full-stack wellness web application developed as the final project for the **4Geeks Academy Full Stack Software Development Bootcamp**.
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+The application helps users build healthier habits by combining mood tracking, workout management, nutrition guidance, and AI-powered recommendations in a single platform.
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+The project was developed collaboratively following Agile practices and Git Flow, simulating a professional software development environment.
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+---
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+# ✨ Features
 
-### Undo a migration
+- 🔐 User Authentication with JWT
+- 👤 User Registration & Login
+- 🔒 Protected Routes
+- 😊 Mood Tracking
+- 🤖 AI-Powered Recommendations
+- 💪 Workout Management
+- 🥗 Nutrition Section
+- 📈 Progress Tracking
+- 👤 User Profile Management
+- 📱 Responsive Interface
 
-You are also able to undo a migration by running
+---
 
-```sh
-$ pipenv run downgrade
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React
+- Vite
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Bootstrap
+
+## Backend
+
+- Python
+- Flask
+- SQLAlchemy
+- Flask-JWT-Extended
+- REST API
+
+## Database
+
+- PostgreSQL
+
+## Tools
+
+- Git
+- GitHub
+- Pipenv
+- Render
+
+---
+
+# 👩‍💻 My Contributions
+
+This project was developed collaboratively by a team during the bootcamp.
+
+My primary contributions included:
+
+- Implemented JWT authentication.
+- Developed Login and Logout functionality.
+- Protected authenticated routes.
+- Developed the Mood Check feature.
+- Connected frontend components with backend REST APIs.
+- Debugged authentication and routing issues.
+- Collaborated during feature integration and testing.
+- Participated in code reviews and Pull Request validation.
+
+---
+
+# 🤝 Team Collaboration
+
+The project was developed using a collaborative Git workflow similar to real-world software development.
+
+Our workflow included:
+
+- Working with feature branches.
+- Git Flow branching strategy.
+- Pull Requests for every completed feature.
+- Code reviews before merging.
+- Merge conflict resolution.
+- Collaborative feature integration.
+- Team communication throughout the development process.
+
+This experience strengthened both technical and collaborative software development skills.
+
+---
+
+# 🏗️ Architecture
+
+```
+React + Vite
+      │
+ REST API (Flask)
+      │
+ SQLAlchemy ORM
+      │
+ PostgreSQL
 ```
 
-### Backend Populate Table Users
+---
 
-To insert test users in the database execute the following command:
+# 🚀 Installation
 
-```sh
-$ flask insert-test-users 5
+## Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/GymMind.git
 ```
 
-And you will see the following message:
+## Backend
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
+Install dependencies
+
+```bash
+pipenv install
 ```
 
-### **Important note for the database and the data inside it**
+Create the environment file
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+```bash
+cp .env.example .env
+```
 
-### Front-End Manual Installation:
+Run database migrations
 
--   Make sure you are using node version 20 and that you have already successfully installed and runned the backend.
+```bash
+pipenv run migrate
+pipenv run upgrade
+```
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+Start the backend
 
-## Publish your website!
+```bash
+pipenv run start
+```
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://4geeks.com/docs/start/deploy-to-render-com).
+---
 
-### Contributors
+## Frontend
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+Install dependencies
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 📂 Project Structure
+
+```
+src/
+├── api/
+├── components/
+├── pages/
+├── services/
+├── styles/
+├── migrations/
+└── models/
+```
+
+---
+
+# 📸 Screenshots
+
+| Login | Dashboard |
+
+| ![](docs/assets/images/login.jpg) | ![](docs/assets/images/dashboard.jpg) |
+
+---
+
+## Mood Check
+
+| ![](docs/assets/images/moodcheck.jpg) 
+
+---
+
+## Workout
+
+| ![](docs/assets/images/workout.jpg) 
+
+---
+
+# 🔒 Authentication
+
+Authentication is implemented using JSON Web Tokens (JWT) to secure user sessions and protect private routes.
+
+---
+
+# 🤖 AI Integration
+
+The application integrates Generative AI to provide personalized wellness recommendations based on user mood entries.
+
+---
+
+# 🌱 Future Improvements
+
+- Dashboard analytics
+- Mobile responsive improvements
+- Push notifications
+- Docker support
+- Automated testing
+- CI/CD pipeline
+- Enhanced AI recommendations
+- Additional health metrics
+
+---
+
+# 🎓 What I Learned
+
+During this project I gained hands-on experience with:
+
+- Full Stack Web Development
+- React
+- Flask
+- REST API development
+- JWT Authentication
+- PostgreSQL
+- SQLAlchemy
+- Git & GitHub
+- Git Flow
+- Pull Requests
+- Team Collaboration
+- Deployment with Render
+
+---
+
+# 📄 License
+
+This project was developed for educational purposes and is part of my professional software development portfolio.
