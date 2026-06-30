@@ -122,7 +122,7 @@ React + Vite
 ## Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/GymMind.git
+git clone https://github.com/meylin103/GymMind.git
 ```
 
 ## Backend
@@ -195,13 +195,13 @@ src/
 
 ## Mood Check
 
-| ![](docs/assets/images/moodcheck.jpg) 
+ ![](docs/assets/images/moodcheck.jpg) 
 
 ---
 
 ## Workout
 
-| ![](docs/assets/images/workout.jpg) 
+![](docs/assets/images/workout.jpg) 
 
 ---
 
